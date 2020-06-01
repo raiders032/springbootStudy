@@ -39,7 +39,7 @@ public class PostsApiControllerTest {
 
     @Test
     @Transactional
-    public void posts_저장됨(){
+    public void posts_등록된다(){
 
         //given
         String title = "spring-boot and AWS";
@@ -63,8 +63,6 @@ public class PostsApiControllerTest {
         assertThat(posts.get(0).getTitle()).isEqualTo(title);
         assertThat(posts.get(0).getContent()).isEqualTo(content);
         assertThat(posts.get(0).getAuthor()).isEqualTo(author);
-
-
     }
 
 }
