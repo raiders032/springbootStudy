@@ -80,11 +80,10 @@ public class PostsApiControllerTest {
                 .content(new ObjectMapper().writeValueAsString(requestDto)))
                 .andExpect(status().isOk());
 
-
         //then
         List<Posts> posts = postsRepository.findAll();
         assertThat(posts.get(0).getTitle()).isEqualTo(title);
-
+        assertThat(posts.get(0).getContent()).isEqualTo(content);
     }
 
     @Test
@@ -115,7 +114,6 @@ public class PostsApiControllerTest {
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(new ObjectMapper().writeValueAsString(requestDto)))
                 .andExpect(status().isOk());
-
 
         //then
         List<Posts> all = postsRepository.findAll();
